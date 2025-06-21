@@ -5,7 +5,7 @@ plugins {
     id("io.deepmedia.tools.deployer") version "0.18.0"
 }
 
-group = "org.kvxd"
+group = "io.github.0x1bd"
 version = "0.1.0"
 description = "CSAPI wrapper written in kotlin"
 
