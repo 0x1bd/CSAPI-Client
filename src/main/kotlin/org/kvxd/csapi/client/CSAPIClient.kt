@@ -2,6 +2,7 @@ package org.kvxd.csapi.client
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.HttpRequestRetry
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.get
@@ -15,7 +16,7 @@ class CSAPIClient(
     private val port: Int = 8080
 ) {
 
-    private val client = HttpClient {
+    private val client = HttpClient(CIO) {
         install(ContentNegotiation) {
             json()
         }
