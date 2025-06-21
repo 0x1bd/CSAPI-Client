@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.ktor)
     alias(libs.plugins.kotlin.plugin.serialization)
 
     id("io.deepmedia.tools.deployer") version "0.18.0"
