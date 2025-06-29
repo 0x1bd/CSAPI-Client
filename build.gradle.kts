@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.github.0x1bd"
-version = "0.1.1"
+version = "0.1.1.1"
 description = "CSAPI wrapper written in kotlin"
 
 repositories {
