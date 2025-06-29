@@ -1,12 +1,12 @@
 package org.kvxd.csapi.client
 
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Item(
     val name: String,
     val skins: Set<Skin>,
+    val lastUpdated: Long
 )
 
 @Serializable
