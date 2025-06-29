@@ -16,49 +16,24 @@ data class Skin(
     val maxFloat: Float,
     val collection: String,
     val rarity: Rarity,
-    val wears: List<Wear>,
-    val stattrakWears: List<Wear> = emptyList(),
-    val souvenirWears: List<Wear> = emptyList(),
+    val listings: List<Listing>,
+    val stattrakListings: List<Listing>,
+    val souvenirListings: List<Listing>,
     val image: String
+)
+
+@Serializable
+data class Listing(
+    val float: Float,
+    val price: Double,
+    val url: String,
+    val link: String
 )
 
 @Serializable
 data class Rarity(
     val name: String,
     val index: Int
-)
-
-@Serializable
-data class Wear(
-    val name: String,
-    val marketHashName: String,
-    val skinportNormal: SkinportNormal?,
-    val skinportMinimal: SkinportMinimal?
-)
-
-@Serializable
-data class SkinportNormal(
-    val last24Hours: HistoricPriceData,
-    val last7Days: HistoricPriceData,
-    val last30Days: HistoricPriceData,
-    val last90Days: HistoricPriceData,
-)
-
-@Serializable
-data class HistoricPriceData(
-    val min: Double? = null,
-    val max: Double? = null,
-    @SerialName("avg")
-    val average: Double? = null,
-    val median: Double? = null,
-    val volume: Int
-)
-
-@Serializable
-data class SkinportMinimal(
-    val suggestedPrice: Double? = null,
-    val averageSalePrice: Double? = null,
-    val volumeLast90Days: Int
 )
 
 @Serializable
@@ -81,11 +56,4 @@ data class ErrorResponse(
     val code: Int,
     val message: String,
     val timestamp: Long
-)
-
-@Serializable
-data class MarketHashResponse(
-    val weapon: String,
-    val skin: Skin,
-    val wear: Wear
 )

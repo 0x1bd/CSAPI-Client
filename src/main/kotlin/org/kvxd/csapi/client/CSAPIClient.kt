@@ -99,14 +99,4 @@ class CSAPIClient(
             }
         }.body()
 
-    suspend fun marketHashName(marketHashName: String): ApiResponse<MarketHashResponse> =
-        client.get {
-            url {
-                protocol = URLProtocol.HTTP
-                host = baseEndpoint
-                port = this@CSAPIClient.port
-                path("api", "v1", "market-hash-name", marketHashName)
-            }
-        }.body()
-
 }
