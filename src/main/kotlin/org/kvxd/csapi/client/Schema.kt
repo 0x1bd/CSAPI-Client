@@ -16,10 +16,10 @@ data class Skin(
     val maxFloat: Float,
     val collection: String,
     val rarity: Rarity,
+    val image: String,
     val listings: List<Listing>,
     val stattrakListings: List<Listing>,
     val souvenirListings: List<Listing>,
-    val image: String
 )
 
 @Serializable
@@ -27,7 +27,23 @@ data class Listing(
     val float: Float,
     val price: Double,
     val url: String,
-    val link: String
+    val link: String,
+    val stickers: List<Sticker> = emptyList(),
+    val charms: List<Charm> = emptyList(),
+)
+
+@Serializable
+data class Sticker(
+    val img: String,
+    val name: String,
+    val slot: Int
+)
+
+@Serializable
+data class Charm(
+    val name: String,
+    val img: String,
+    val pattern: Int
 )
 
 @Serializable
